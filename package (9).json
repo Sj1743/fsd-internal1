@@ -1,0 +1,12 @@
+{
+  "name": "typescript-migration-project",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": ["client", "server", "shared"],
+  "scripts": {
+    "typecheck": "npm run build --workspace=shared && npm run typecheck --workspace=shared && npm run typecheck --workspace=server && npm run typecheck --workspace=client",
+    "build": "npm run build --workspace=shared && npm run build --workspace=server && npm run build --workspace=client",
+    "dev:server": "npm run dev --workspace=server",
+    "dev:client": "npm run dev --workspace=client"
+  }
+}
